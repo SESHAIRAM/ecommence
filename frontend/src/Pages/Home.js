@@ -1,10 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { CompButton } from '../Component/CompButton';
 import { Validations } from '../Common/Validations';
-import useFetch from '../ApiOP/useFetch';
-import { useDispatch, useSelector } from 'react-redux';
-import { setlogininfo } from '../reduxStore/AppState';
 import { CompErrorMsg } from '../Component/CompErrorMsg';
 import { CompFooter } from '../Component/CompFooter';
 
@@ -12,15 +8,10 @@ export const Home = () => {
 
     const [startinit, setStartinit] = useState(true);
     const [startRender, setStartRender] = useState(false);
-    const [toolTip, setToolTip] = useState(false);
     const [notify, setNotify] = useState(false);
 
     const ctlProduct = useRef([]);
     const ctlNotify = useRef({})
-
-    const navigate = useNavigate()
-    const validate = Validations();
-
 
     function initiControl() {
         let products = [
@@ -309,7 +300,6 @@ export const Home = () => {
                                                             </div>
                                                         )
                                                     })}
-                                                {/* e9e8e8 */}
                                             </div>
                                         </div >
                                     )

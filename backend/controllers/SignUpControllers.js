@@ -1,17 +1,18 @@
 const { json } = require("express");
-const accessSignUpModel = require("../models/AccessSignUpModel");
+const accessModel = require("../models/AccessModel");
 
 
 exports.SignUpPage = async (req, res, next) => {
     const addUserDetailsParse = req.body;// to check the Email already registor or not
     try {
-        const existingUser = await accessSignUpModel.findOne({ mailID: addUserDetailsParse.mailID });
+        const existingUser = await accessModel.findOne({ mailID: addUserDetailsParse.mailID });
         if (existingUser === null) {
-            const registeringUser = await accessSignUpModel.insertMany(addUserDetailsParse);
+            const registeringUser = await accessModel.insertMany(addUserDetailsParse);
             console.log(registeringUser);
             res.json(
                 {
                     success: true,
+                    name: registeringUser.userName,
                     errormsg: "successfully registed",
                 }
             )

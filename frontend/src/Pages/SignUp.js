@@ -14,8 +14,10 @@ export const SignUp = () => {
     const [startinit, setStartinit] = useState(true);
     const [startRender, setStartRender] = useState(false);
     const [rerender, setRerender] = useState(false);
+    const [notify, setNotify] = useState(false);
 
     const ctlAttribute = useRef([]);
+    const ctlNotify = useRef({});
 
     const navigate = useNavigate()
     const validate = Validations();
@@ -227,13 +229,16 @@ export const SignUp = () => {
             );
             navigate("/home")
 
+        } else if (responseData.errormsg == "user is already register") {
+            ctlAttribute.current[0].tooltip.isvalidation = true;
+            ctlAttribute.current[0].tooltip.isfocus.focus();
+            ctlNotify.current.name = responseData.errormsg;
+            ctlNotify.current.price = "mailid is already register";
+            ctlNotify.current.photo = "notify-error-img";
         } else {
-            if (responseData.errormsg == "user is already register") {
-
-            } else {
-                navigate("/error500")
-            }
+            navigate("/error500");
         }
+        setNotify(true);
     }
 
     function handleButtonClick(e) {
@@ -244,6 +249,16 @@ export const SignUp = () => {
                 break;
         }
     }
+
+    useEffect(() => {
+        if (notify) {
+            const closeNotify = setInterval(() => {
+                setNotify(false);
+            }, 2000);
+
+            return () => clearInterval(closeNotify);
+        }
+    }, [notify]);
 
     useEffect(() => {
         if (startinit) {
@@ -263,8 +278,13 @@ export const SignUp = () => {
         <>
             {startRender && (
                 <>
-                    <CompErrorMsg />
                     <div className='d-flex flex-wrap w-100 vh-100 justify-content-center '>
+                        <CompErrorMsg
+                            nameProps={ctlNotify.current.name}
+                            priceProps={ctlNotify.current.price}
+                            photoProps={ctlNotify.current.photo}
+                            bool={notify}
+                        />
                         <div className='d-flex justify-content-center flex-wrap overflow-auto p-4 w-50 bg-backdrop'>
                             <div className='flex-fill'>
                                 <div className='mx-auto'>
