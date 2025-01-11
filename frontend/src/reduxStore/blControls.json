@@ -1,0 +1,32 @@
+const l_controls_array = useRef([
+    {
+      /**Comment added in the story */
+      control_id: "txt_employerName",
+      validateMandate: true,
+      validateDataType: "name",
+      inputhint:
+        "Custom Bootstrap Form For custom Bootstrap form validation messages, you ll need to add the novalidate boolean attribute to your form. For server side validation read full documentation.",
+      labelvalue: "Employer Name *",
+      tab_index: 0,
+      max_textlen: 100,
+      lblClassName: "",
+      inputClassName: "",
+      hintClassName: "",
+      errCss: "",
+      inputValue: "",
+    },
+    {
+      control_id: "txt_ShortName",
+      validateMandate: true,
+      validateDataType: "name",
+      inputhint: "Short Name is used for Representing any logos ",
+      labelvalue: "Short Name *",
+      tab_index: 0,
+      max_textlen: 100,
+      lblClassName: "",
+      inputClassName: "",
+      hintClassName: "",
+      errCss: "",
+      inputValue: "",
+    },
+  ]);

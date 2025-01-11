@@ -1,0 +1,204 @@
+{ ctl_array = [
+  {
+    
+    arrayIndex: 0,
+    cssTheme: {
+      lableText: "Send OTP (Valid till 120 Seconds",
+      classname: "btn btn-primary d-right",
+      id: "btn_sendotp",
+      length: 6,
+      enable: true,
+      mandatory: true,
+    },
+  },
+  {
+    
+    arrayIndex: 1,
+    cssTheme: {
+      lableText: "Email Address",
+      classname: "btn btn-primary d-right",
+      id: "txt_emailaddress",
+      length: 10,
+      showhint: false,
+      enable: true,
+      mandatory: true,
+      hinttext: "Use the Email Address you have registered when signup",
+    },
+    inputvalue: "",
+    validate: {
+      mandatory: true,
+      datatype: "email",
+    },
+    error: {
+      errorshow: false,
+      errormsg: "This field is mandatory",
+    },
+  },
+  {
+    /*Ctl:Otp Phone No Index : 2*/
+    arrayIndex: 2,
+    cssTheme: {
+      lableText: "Phone No ",
+      classname: "btn btn-primary d-right",
+      id: "txt_phoneno",
+      length: 10,
+      showhint: false,
+      enable: true,
+      mandatory: true,
+      hinttext: "Use the Phone No you have registered when signup",
+    },
+    inputvalue: "",
+    validate: {
+      mandatory: true,
+      datatype: "phoneno",
+    },
+    error: {
+      errorshow: false,
+      errormsg: "The field is mandatory",
+    },
+  },
+  {
+    /*Ctl: cancel login Index : 3*/
+    arrayIndex: 3,
+    cssTheme: {
+      lableText: "Cancel",
+      classname: "btn btn-danger d-right",
+      id: "btn_cancellogin",
+      enable: true,
+    },
+  },
+  {
+    /*Ctl: Resend Otp login Index : 4*/
+    arrayIndex: 4,
+    cssTheme: {
+      lableText: "Resend OTP",
+      classname: "btn btn-secondary d-right",
+      id: "btn_Resendotp",
+      enable: true,
+    },
+  },
+  {
+    /*Ctl: Login  Index : 5*/
+    arrayIndex: 5,
+    cssTheme: {
+      lableText: "Login",
+      classname: "btn btn-primary d-right",
+      id: "btn_Login",
+      enable: true,
+    },
+  },
+  {
+    /*Ctl:Enter Otp Phone No Index : 6*/
+    arrayIndex: 6,
+    cssTheme: {
+      lableText: "Phone No OTP ",
+      classname: "btn btn-primary d-right",
+      id: "txt_otpPhoneno",
+      length: 6,
+      showhint: false,
+      hinttext: "Please Enter the OTP Recieved on the Registered Phone No",
+      enable: true,
+    },
+    inputvalue: "",
+    validate: {
+      mandatory: true,
+      datatype: "numeric",
+    },
+    error: {
+      errorshow: false,
+      errormsg: "The field is mandatory",
+    },
+  },
+  {
+    /*Ctl:Enter Otp Email No Index : 7*/
+    arrayIndex: 7,
+    cssTheme: {
+      lableText: "Email OTP",
+      classname: "btn btn-primary d-right",
+      id: "txt_otpEmail",
+      length: 6,
+      showhint: false,
+      enable: true,
+      hinttext:
+        "Please Enter the OTP Recieved on the Registered Email address",
+    },
+    inputvalue: "",
+    validate: {
+      mandatory: true,
+      datatype: "numeric",
+    },
+    error: {
+      errorshow: false,
+      errormsg: "The field is mandatory",
+    },
+  },
+  {
+    /*Ctl:Enter user Name : 8*/
+    arrayIndex: 8,
+    cssTheme: {
+      lableText: "Username",
+      classname: "btn btn-primary d-right",
+      id: "txt_username",
+      length: 6,
+      showhint: false,
+      enable: true,
+      hinttext: "Use the Username when you have created the Account",
+    },
+    inputvalue: "",
+    validate: {
+      mandatory: true,
+      datatype: "username",
+    },
+    error: {
+      errorshow: false,
+      errormsg: "The field is mandatory",
+    },
+  },
+  {
+    /*Ctl:Enter Password : 9*/
+    arrayIndex: 9,
+    cssTheme: {
+      lableText: "Password",
+      classname: "btn btn-primary d-right",
+      id: "txt_password",
+      length: 6,
+      showhint: false,
+      enable: true,
+      hinttext: "Enter the Password : Password are case sensitive",
+    },
+    inputvalue: "",
+    validate: {
+      mandatory: true,
+      datatype: "username",
+    },
+    error: {
+      errorshow: false,
+      errormsg: "The field is mandatory",
+    },
+  },
+  {
+    /*Ctl:Login username Index : 10*/
+    arrayIndex: 10,
+    cssTheme: {
+      lableText: "Login",
+      classname: "btn btn-primary d-right",
+      id: "btn_userlogin",
+      length: 6,
+      enable: true,
+      mandatory: true,
+    },
+  },
+  {
+    /*Ctl:Login username Index : 11*/
+    arrayIndex: 11,
+    cssTheme: {
+      lableText: "Cancel",
+      classname: "btn btn-danger d-right",
+      id: "btn_usercancel",
+      length: 6,
+      enable: true,
+      mandatory: true,
+    },
+  },
+];
+}
