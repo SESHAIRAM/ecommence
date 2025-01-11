@@ -11,7 +11,7 @@ export const CompHeader = () => {
 
   const ctlAttribute = useRef([]);
 
-  const Navigate = useNavigate()
+  const Navigator = useNavigate()
   function initiControl() {
     const CtlArray = [
       {
@@ -29,7 +29,7 @@ export const CompHeader = () => {
         csstheme: {
           labletext: "Cart",
           classname: "btn btn-warning m-06 media-730",
-          id: "btn_signup",
+          id: "btn_cart",
           icon: "fa-solid fa-cart-shopping m-06 "
         },
       },
@@ -39,7 +39,7 @@ export const CompHeader = () => {
         csstheme: {
           labletext: "Logout",
           classname: "btn btn-light text-dark media-730",
-          id: "btn_signup",
+          id: "btn_logout",
           icon: "fas fa-sign-out-alt m-06"
         },
       },
@@ -82,6 +82,9 @@ export const CompHeader = () => {
 
       case "btn_arrow":
         scrollingTopDown()
+        break;
+      case "btn_logout":
+        Navigator("/")
         break;
       default:
         break;

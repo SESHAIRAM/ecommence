@@ -27,6 +27,14 @@ export const Login = () => {
     const getAppStoreData = useSelector((state) => state.appstate.login_info);
 
     function initiControl() {
+        dispatchappStore(
+            setlogininfo({
+                ...getAppStoreData,
+                username: "",
+                email: "",
+                isloggedin: false,
+            })
+        );
         const CtlArray = [
             {
                 /*Ctl:Email Address : 0*/
